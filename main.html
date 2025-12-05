@@ -258,7 +258,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Элементы DOM
             const showSolutionBtn = document.getElementById('showSolutionBtn');
             const solution = document.getElementById('solution');
             const checkAnswerBtn = document.getElementById('checkAnswerBtn');
@@ -267,7 +266,6 @@
             
             const correctAnswer = 10;
             
-            // Показать/скрыть решение
             showSolutionBtn.addEventListener('click', function() {
                 solution.classList.toggle('active');
                 if (solution.classList.contains('active')) {
@@ -277,7 +275,6 @@
                 }
             });
             
-            // Проверить ответ
             checkAnswerBtn.addEventListener('click', function() {
                 const userAnswer = parseInt(userAnswerInput.value);
                 
@@ -295,7 +292,6 @@
                                         '<button class="show-solution-btn" id="showSolutionFromResult" style="margin-top:10px;">Показать решение</button>';
                     resultDiv.className = 'result incorrect';
                     
-                    // Добавляем обработчик для кнопки показа решения из результата
                     document.getElementById('showSolutionFromResult').addEventListener('click', function() {
                         solution.classList.add('active');
                         showSolutionBtn.textContent = 'Скрыть решение';
@@ -304,14 +300,12 @@
                 }
             });
             
-            // Проверка при нажатии Enter в поле ввода
             userAnswerInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     checkAnswerBtn.click();
                 }
             });
             
-            // Автофокус на поле ввода при загрузке страницы
             userAnswerInput.focus();
         });
     </script>
